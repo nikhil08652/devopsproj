@@ -1,3 +1,4 @@
+""" This is a meaningful comment as required by pylint"""
 #!/usr/bin/env python
 import os
 import sys
