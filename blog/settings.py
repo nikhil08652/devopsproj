@@ -27,7 +27,7 @@ SECRET_KEY = '%q32#=h4sn&^hg^*^&@m0f8+nmhfc@lt22(*@k!=yc@uyzpo2c'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['Proj-env.eba-2ev6gi4d.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['Proj-env.eba-2ev6gi4d.us-east-1.elasticbeanstalk.com', '*']
 
 
 # Application definition
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,3 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#Media folder settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
